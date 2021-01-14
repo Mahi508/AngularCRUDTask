@@ -1,0 +1,44 @@
+
+<div
+layout="row"
+md-content
+layout-padding
+style="background-color: red; color:white;height:60px; "
+>
+<h1 class="heading">Project Management</h1>
+</div>
+
+<div
+layout="row"
+md-content
+layout-padding
+style= "color:red;height:110px; "
+>
+<h2 class="heading">Project Details</h2>
+</div>
+
+<div>
+  <table class="table table-bordered">
+    <thead>
+        <th>id</th>
+        <th>Project Name</th>
+        <th>Customer Name</th>
+        <th>Location</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects ">
+        <td>{{project.id}}</td> 
+         <td>{{project.projectname}}</td>
+          <td>{{project.customername}}</td>
+           <td>{{project.location}}</td>
+          <!-- <td> <input [(ngModel)]="test"> </td> -->
+           <td><mat-icon (click)="openDialog(project)">edit</mat-icon></td>
+           <td><mat-icon (click)="removeProject(project)"><a>delete</a></mat-icon></td>
+          </tr>
+    </tbody>
+    
+  </table>
+  </div>
+  <mat-icon><a (click)="openDialog(null)">add_box</a></mat-icon>
+ 
